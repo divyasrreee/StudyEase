@@ -1,0 +1,466 @@
+/* =========================================
+   StudyEase - Professional UI
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+   ========================================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+header {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    padding: 30px 6%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+    font-size: 34px;
+    font-weight: 700;
+}
+
+header p {
+    margin-top: 5px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+
+/* =========================================
+   GENERAL SECTIONS
+   ========================================= */
+
+section {
+    background: white;
+    padding: 28px;
+    margin-bottom: 28px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================
+   WELCOME
+   ========================================= */
+
+.welcome {
+    text-align: center;
+    padding: 35px;
+}
+
+.welcome h2 {
+    font-size: 28px;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: #6b7280;
+    font-size: 17px;
+}
+
+
+/* =========================================
+   STUDENT INFORMATION
+   ========================================= */
+
+.student-info {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.student-info h2 {
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+
+/* =========================================
+   LABELS
+   ========================================= */
+
+label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 7px;
+    font-weight: 600;
+    color: #374151;
+}
+
+
+/* =========================================
+   INPUTS & SELECT
+   ========================================= */
+
+input,
+select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    background: white;
+    transition: 0.2s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+button {
+    margin-top: 22px;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #4f46e5;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #3730a3;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   DASHBOARD
+   ========================================= */
+
+.dashboard {
+    display: none;
+}
+
+.dashboard > h2 {
+    margin-bottom: 18px;
+    color: #111827;
+}
+
+
+/* =========================================
+   SUBJECT SECTION
+   ========================================= */
+
+.subjects-section {
+    margin-top: 25px;
+}
+
+.subjects-section h2 {
+    color: #111827;
+}
+
+.subjects-section > p {
+    margin-top: 7px;
+    color: #6b7280;
+}
+
+
+/* =========================================
+   SUBJECT FORM
+   ========================================= */
+
+.subject-form {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+
+/* =========================================
+   SUBJECT BOX
+   ========================================= */
+
+.subject-box {
+    flex: 1;
+    background: #f8f9ff;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #e2e5f0;
+    transition: 0.2s;
+}
+
+.subject-box:hover {
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.08);
+    transform: translateY(-2px);
+}
+
+.subject-box h3 {
+    margin-bottom: 15px;
+    color: #4f46e5;
+    font-size: 20px;
+}
+
+.subject-box input {
+    margin-bottom: 5px;
+}
+
+
+/* =========================================
+   GENERATE BUTTON
+   ========================================= */
+
+.subjects-section > button {
+    margin-top: 28px;
+    padding: 14px 28px;
+    font-size: 16px;
+}
+
+
+/* =========================================
+   DASHBOARD CARDS
+   ========================================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.card {
+    padding: 22px;
+    background: #f8f9ff;
+    border-radius: 12px;
+    border: 1px solid #e4e7f0;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #374151;
+    font-size: 17px;
+}
+
+.card p {
+    font-size: 25px;
+    font-weight: 700;
+    color: #111827;
+}
+
+
+/* =========================================
+   SUBJECT PROGRESS
+   ========================================= */
+
+.progress-section {
+    margin-top: 25px;
+}
+
+.progress-section h2 {
+    margin-bottom: 5px;
+}
+
+.progress-section > p {
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.progress-item {
+    margin-top: 18px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.progress-header strong {
+    font-size: 16px;
+    color: #374151;
+}
+
+.progress-header span {
+    font-weight: 600;
+    color: #4f46e5;
+}
+
+
+/* =========================================
+   PROGRESS BAR
+   ========================================= */
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4f46e5, #6366f1);
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+
+/* =========================================
+   ADAPTIVE STUDY PLAN
+   ========================================= */
+
+#adaptivePlan {
+    margin-top: 28px;
+}
+
+#adaptivePlan > h2 {
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+#adaptivePlan > p {
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   PLAN ITEMS
+   ========================================= */
+
+.plan-item {
+    background: #f8f9ff;
+    border-left: 5px solid #4f46e5;
+    padding: 20px;
+    margin-top: 18px;
+    border-radius: 10px;
+    border-top: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.plan-item h3 {
+    margin-bottom: 12px;
+    font-size: 21px;
+    color: #111827;
+}
+
+.plan-item p {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #374151;
+}
+
+.plan-item button {
+    margin-right: 10px;
+    padding: 10px 18px;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   PLAN SUMMARY
+   ========================================= */
+
+.plan-summary {
+    margin-top: 22px;
+    padding: 17px;
+    background: #eef2ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #3730a3;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .subject-form {
+        flex-direction: column;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    main {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    header {
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome h2 {
+        font-size: 24px;
+    }
+
+    .plan-item button {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+    }
+}

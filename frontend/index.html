@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyEase - Adaptive Study Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>StudyEase</h1>
+        <p>Adaptive Personal Study Planner</p>
+    </header>
+
+
+    <main>
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+
+            <h2>Welcome to StudyEase</h2>
+
+            <p>
+                Plan smarter. Study better. Improve continuously.
+            </p>
+
+        </section>
+
+
+        <!-- Student Information -->
+        <section class="student-info">
+
+            <h2>Student Information</h2>
+
+
+            <label>Name</label>
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter your name"
+            >
+
+
+            <label>Available Study Hours</label>
+
+            <input
+                type="number"
+                id="studyHours"
+                placeholder="Enter hours"
+                min="1"
+            >
+
+
+            <label>Preferred Study Time</label>
+
+            <select id="studyTime">
+
+                <option>Morning</option>
+                <option>Afternoon</option>
+                <option>Evening</option>
+
+            </select>
+
+
+            <button
+                type="button"
+                onclick="saveStudent()"
+            >
+                Continue
+            </button>
+
+        </section>
+
+
+
+        <!-- Dashboard -->
+        <section
+            id="dashboard"
+            class="dashboard"
+        >
+
+
+            <!-- Subjects Section -->
+            <section class="subjects-section">
+
+                <h2>Add Your Subjects</h2>
+
+                <p>
+                    Enter your preparation, exam urgency,
+                    performance and importance.
+                </p>
+
+
+                <div class="subject-form">
+
+
+                    <!-- Subject 1 -->
+                    <div class="subject-box">
+
+                        <h3>Subject 1</h3>
+
+
+                        <label>Subject Name</label>
+
+                        <input
+                            type="text"
+                            id="subject1Name"
+                            placeholder="Example: Java"
+                        >
+
+
+                        <label>Preparation Level (%)</label>
+
+                        <input
+                            type="number"
+                            id="subject1Preparation"
+                            min="0"
+                            max="100"
+                        >
+
+
+                        <label>Exam Days Remaining</label>
+
+                        <input
+                            type="number"
+                            id="subject1ExamDays"
+                            min="0"
+                        >
+
+
+                        <label>Performance (%)</label>
+
+                        <input
+                            type="number"
+                            id="subject1Performance"
+                            min="0"
+                            max="100"
+                        >
+
+
+                        <label>Importance (1-5)</label>
+
+                        <input
+                            type="number"
+                            id="subject1Importance"
+                            min="1"
+                            max="5"
+                        >
+
+                    </div>
+
+
+
+                    <!-- Subject 2 -->
+                    <div class="subject-box">
+
+                        <h3>Subject 2</h3>
+
+
+                        <label>Subject Name</label>
+
+                        <input
+                            type="text"
+                            id="subject2Name"
+                            placeholder="Example: DBMS"
+                        >
+
+
+                        <label>Preparation Level (%)</label>
+
+                        <input
+                            type="number"
+                            id="subject2Preparation"
+                            min="0"
+                            max="100"
+                        >
+
+
+                        <label>Exam Days Remaining</label>
+
+                        <input
+                            type="number"
+                            id="subject2ExamDays"
+                            min="0"
+                        >
+
+
+                        <label>Performance (%)</label>
+
+                        <input
+                            type="number"
+                            id="subject2Performance"
+                            min="0"
+                            max="100"
+                        >
+
+
+                        <label>Importance (1-5)</label>
+
+                        <input
+                            type="number"
+                            id="subject2Importance"
+                            min="1"
+                            max="5"
+                        >
+
+                    </div>
+
+
+
+                    <!-- Subject 3 -->
+                    <div class="subject-box">
+
+                        <h3>Subject 3</h3>
+
+
+                        <label>Subject Name</label>
+
+                        <input
+                            type="text"
+                            id="subject3Name"
+                            placeholder="Example: Computer Networks"
+                        >
+
+
+                        <label>Preparation Level (%)</label>
+
+                        <input
+                            type="number"
+                            id="subject3Preparation"
+                            min="0"
+                            max="100"
+                        >
+
+
+                        <label>Exam Days Remaining</label>
+
+                        <input
+                            type="number"
+                            id="subject3ExamDays"
+                            min="0"
+                        >
+
+
+                        <label>Performance (%)</label>
+
+                        <input
+                            type="number"
+                            id="subject3Performance"
+                            min="0"
+                            max="100"
+                        >
+
+
+                        <label>Importance (1-5)</label>
+
+                        <input
+                            type="number"
+                            id="subject3Importance"
+                            min="1"
+                            max="5"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Generate Button -->
+                <button
+                    type="button"
+                    onclick="generatePlan()"
+                >
+                    Generate Adaptive Study Plan
+                </button>
+
+            </section>
+
+
+
+            <!-- Today's Dashboard -->
+            <h2>Today's Study Dashboard</h2>
+
+
+            <div class="cards">
+
+
+                <!-- Study Hours -->
+                <div class="card">
+
+                    <h3>Study Hours</h3>
+
+                    <p id="displayHours">
+                        0
+                    </p>
+
+                </div>
+
+
+
+                <!-- Preferred Time -->
+                <div class="card">
+
+                    <h3>Preferred Time</h3>
+
+                    <p id="displayTime">
+                        -
+                    </p>
+
+                </div>
+
+
+
+                <!-- Plan Status -->
+                <div class="card">
+
+                    <h3>Plan Status</h3>
+
+                    <p id="planStatus">
+                        Ready
+                    </p>
+
+                </div>
+
+
+
+                <!-- Completed Sessions -->
+                <div class="card">
+
+                    <h3>Sessions Completed</h3>
+
+                    <p id="completedCount">
+                        0
+                    </p>
+
+                </div>
+
+
+
+                <!-- Missed Sessions -->
+                <div class="card">
+
+                    <h3>Sessions Missed</h3>
+
+                    <p id="missedCount">
+                        0
+                    </p>
+
+                </div>
+
+
+
+                <!-- Completion Rate -->
+                <div class="card">
+
+                    <h3>Completion Rate</h3>
+
+                    <p id="completionRate">
+                        0%
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Subject Progress -->
+            <section class="progress-section">
+
+                <h2>Subject Progress</h2>
+
+                <p>
+                    Track your preparation level for each subject.
+                </p>
+
+
+                <div id="subjectProgress">
+
+
+                    <!-- Java -->
+                    <div class="progress-item">
+
+                        <div class="progress-header">
+
+                            <strong id="progressSubject1Name">
+                                Java
+                            </strong>
+
+                            <span id="progressSubject1Value">
+                                0%
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                id="progressSubject1Bar"
+                                style="width: 0%;"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- DBMS -->
+                    <div class="progress-item">
+
+                        <div class="progress-header">
+
+                            <strong id="progressSubject2Name">
+                                DBMS
+                            </strong>
+
+                            <span id="progressSubject2Value">
+                                0%
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                id="progressSubject2Bar"
+                                style="width: 0%;"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- CN -->
+                    <div class="progress-item">
+
+                        <div class="progress-header">
+
+                            <strong id="progressSubject3Name">
+                                CN
+                            </strong>
+
+                            <span id="progressSubject3Value">
+                                0%
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                id="progressSubject3Bar"
+                                style="width: 0%;"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
